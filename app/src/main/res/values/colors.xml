@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy_blue">#001F3F</color>
+    <color name="white">#FFFFFF</color>
+    <!-- helpers -->
+    <color name="primary">@color/navy_blue</color>
+    <color name="onPrimary">@color/white</color>
+    <color name="ic_launcher_background">#001F3F</color>
+    <color name="ic_background">#001F3F</color>
+
+
+</resources>

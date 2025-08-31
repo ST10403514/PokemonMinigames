@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- App theme -->
+    <style name="Theme.PokemonMinigames" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- default button style -->
+        <item name="materialButtonStyle">@style/Widget.Pokemon.Button</item>
+    </style>
+
+    <!-- Fallback splash theme (Android < 12) -->
+    <style name="Theme.PokemonMinigames.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/navy_blue</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="Widget.Pokemon.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/navy_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+</resources>

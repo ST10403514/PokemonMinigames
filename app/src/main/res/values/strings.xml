@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Pokemon Minigames</string>
+    <string name="welcome">Welcome to Pokemon Minigames!</string>
+    <string name="sign_out">Sign Out</string>
+
+    <!-- Login/Register -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enable_biometrics">Enable Biometrics</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="or">OR</string>
+    <string name="no_account">Dont have an account? Register</string>
+    <string name="have_account">Already have an account? Login</string>
+</resources>

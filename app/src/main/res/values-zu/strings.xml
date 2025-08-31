@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pokemon Minigames</string>
+    <string name="welcome">Siyakwamukela ku Pokemon Minigames!</string>
+    <string name="sign_out">Phuma</string>
+
+    <!-- Login/Register -->
+    <string name="email">Iimeyili</string>
+    <string name="password">Iphasiwedi</string>
+    <string name="confirm_password">Qinisekisa iphasiwedi</string>
+    <string name="enable_biometrics">Vula iBiometrics</string>
+    <string name="login">Ngena</string>
+    <string name="register">Bhalisa</string>
+    <string name="or">NOMA</string>
+    <string name="no_account">Awunayo iakhawunti? Bhalisa</string>
+    <string name="have_account">Usunayo iakhawunti? Ngena</string>
+</resources>

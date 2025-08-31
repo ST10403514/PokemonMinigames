@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pokemon Minigames</string>
+    <string name="welcome">Welkom by Pokemon Minigames!</string>
+    <string name="sign_out">Teken uit</string>
+
+    <!-- Login/Register -->
+    <string name="email">E-pos</string>
+    <string name="password">Wagwoord</string>
+    <string name="confirm_password">Bevestig wagwoord</string>
+    <string name="enable_biometrics">Aktiveer biometrie</string>
+    <string name="login">Teken in</string>
+    <string name="register">Registreer</string>
+    <string name="or">OF</string>
+    <string name="no_account">Het jy nie n rekening nie? Registreer</string>
+    <string name="have_account">Het jy al n rekening? Teken in</string>
+</resources>
