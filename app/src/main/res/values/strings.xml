@@ -15,4 +15,13 @@
     <string name="or">OR</string>
     <string name="no_account">Dont have an account? Register</string>
     <string name="have_account">Already have an account? Login</string>
+    <string name="welcome_guest">Welcome, Guest!</string>
+    <string name="welcome_user">Welcome, @user</string>
+    <string name="player">Player</string>
+    <string name="play_game1">Play Game 1</string>
+    <string name="play_game2">Play Game 2</string>
+    <string name="settings">Settings</string>
+    <string name="default_web_client_id">258196293152-lvgsnfqlaaqqt3s33v2n9km3eaevubom.apps.googleusercontent.com</string>
+
+
 </resources>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mason.pokemonminigames">
 
@@ -8,21 +9,46 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PokemonMinigames">
-
-        <!-- Launcher activity uses Splash theme -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.StoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RewardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LeaderboardActivity"
+            android:exported="false" /> <!-- Launcher Activity -->
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.PokemonMinigames.Splash">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".ui.LoginActivity" android:exported="true"/>
-        <activity android:name=".ui.RegisterActivity" android:exported="true"/>
-        <activity android:name=".ui.HomeActivity" android:exported="true"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Other Activities -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.Game1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Game2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Game3Activity"
+            android:exported="false" />
     </application>
 
 </manifest>

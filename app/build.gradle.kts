@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.fragment.ktx)
     implementation(libs.lifecycle.runtime.ktx)
 
+
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth.ktx)
@@ -64,6 +65,9 @@ dependencies {
 
     // Preferences
     implementation(libs.preference.ktx)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
+    implementation(libs.activity)
 }
 
 // Apply Google Services at the very end
