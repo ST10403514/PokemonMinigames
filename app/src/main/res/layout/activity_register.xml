@@ -6,9 +6,29 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Small Logo at the Top -->
+        <ImageView
+            android:src="@mipmap/logo"
+            android:contentDescription="@string/app_name"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Register Title -->
+        <TextView
+            android:text="Register"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Email Input -->
         <EditText
             android:id="@+id/etEmail"
             android:hint="@string/email"
@@ -16,20 +36,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!-- Password Input -->
         <EditText
             android:id="@+id/etPassword"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
 
+        <!-- Confirm Password Input -->
         <EditText
             android:id="@+id/etConfirm"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
 
+        <!-- Biometrics Option -->
         <CheckBox
             android:id="@+id/cbEnableBiometric"
             android:text="@string/enable_biometrics"
@@ -37,13 +62,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"/>
 
+        <!-- Register Button -->
         <Button
             android:id="@+id/btnCreate"
             android:text="@string/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="16dp"/>
 
+        <!-- Go to Login -->
         <TextView
             android:id="@+id/tvGoLogin"
             android:text="@string/have_account"

@@ -3,7 +3,6 @@ package com.mason.pokemonminigames.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.mason.pokemonminigames.databinding.ActivityHomeBinding
 import com.mason.pokemonminigames.R
@@ -27,25 +26,19 @@ class HomeActivity : AppCompatActivity() {
             "Welcome, Guest"
         }
 
-        // Game buttons
-        binding.btnGame1.setOnClickListener {
-            startActivity(Intent(this, Game1Activity::class.java))
-        }
-        binding.btnGame2.setOnClickListener {
-            startActivity(Intent(this, Game2Activity::class.java))
-        }
-        binding.btnGame3.setOnClickListener {
-            startActivity(Intent(this, Game3Activity::class.java))
+        // ✅ Tic Tac Toe Buttons
+        binding.cardSinglePlayer.setOnClickListener {
+            startActivity(Intent(this, SinglePlayerActivity::class.java))
         }
 
+        binding.cardMultiplayer.setOnClickListener {
+            startActivity(Intent(this, MultiplayerActivity::class.java))
+        }
 
-        // Bottom Navigation
+        // ✅ Keep bottom nav if you still want it
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
-                    // Already on home
-                    true
-                }
+                R.id.nav_home -> true
                 R.id.nav_leaderboard -> {
                     startActivity(Intent(this, LeaderboardActivity::class.java))
                     true
@@ -65,7 +58,5 @@ class HomeActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-
     }
 }

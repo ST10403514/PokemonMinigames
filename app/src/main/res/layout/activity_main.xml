@@ -6,19 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- App Logo -->
     <ImageView
-        android:src="@drawable/logo"
+        android:src="@mipmap/logo"
         android:contentDescription="@string/app_name"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="16dp" />
 
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Pokémon Tic Tac Toe"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Language Selector -->
     <Spinner
         android:id="@+id/spLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp" />
 
+    <!-- Login Button -->
     <Button
         android:id="@+id/btnLogin"
         android:text="@string/login"
@@ -29,12 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="8dp"/>
 
+    <!-- Register Button -->
     <Button
         android:id="@+id/btnRegister"
         android:text="@string/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!-- Divider Text -->
     <TextView
         android:text="@string/or"
         android:layout_marginTop="16dp"
@@ -42,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <!-- Google Sign-In -->
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
         android:layout_width="match_parent"

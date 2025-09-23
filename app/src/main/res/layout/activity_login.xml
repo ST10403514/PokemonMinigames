@@ -6,9 +6,29 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Small Logo at the Top (with more top margin to push it down) -->
+        <ImageView
+            android:src="@mipmap/logo"
+            android:contentDescription="@string/app_name"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Login Title -->
+        <TextView
+            android:text="Login"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Email Input -->
         <EditText
             android:id="@+id/etEmail"
             android:hint="@string/email"
@@ -16,13 +36,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!-- Password Input -->
         <EditText
             android:id="@+id/etPassword"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
 
+        <!-- Biometrics Option -->
         <CheckBox
             android:id="@+id/cbEnableBiometric"
             android:text="@string/enable_biometrics"
@@ -30,13 +53,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"/>
 
+        <!-- Login Button -->
         <Button
             android:id="@+id/btnEmailLogin"
             android:text="@string/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="16dp"/>
 
+        <!-- Go to Register -->
         <TextView
             android:id="@+id/tvGoRegister"
             android:text="@string/no_account"
