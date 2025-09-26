@@ -1,166 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="42dp"
-    android:padding="36dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- Back Button -->
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_arrow_back"
-        android:contentDescription="Go Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- Top bar with back button + title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <!-- Title -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Single Player"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Highscore and current streak -->
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tvHighscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tic Tac Toe - Single Player"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginTop="16dp"
+        android:text="Highscore: 0"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
-    <!-- Tic Tac Toe Grid -->
+    <TextView
+        android:id="@+id/tvCurrentStreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Current Streak: 0"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!-- Game board (3x3 grid) -->
     <GridLayout
-        android:id="@+id/grid_board"
-        android:layout_width="0dp"
+        android:id="@+id/gridBoard"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:rowCount="3"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:alignmentMode="alignMargins"
         android:columnCount="3"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:rowCount="3">
 
-        <!-- 9 buttons that auto-resize -->
+        <!-- 9 board cells -->
         <ImageButton
-            android:id="@+id/btnCell1"
+            android:id="@+id/cell0"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="0"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell0" />
 
         <ImageButton
-            android:id="@+id/btnCell2"
+            android:id="@+id/cell1"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="1"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell1" />
 
         <ImageButton
-        android:id="@+id/btnCell3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/cell_background"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:contentDescription="Tic Tac Toe cell"
-        android:tag="2"/>
-
-
-        <ImageButton
-            android:id="@+id/btnCell4"
+            android:id="@+id/cell2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="3"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell2" />
 
         <ImageButton
-            android:id="@+id/btnCell5"
+            android:id="@+id/cell3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="4"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell3" />
 
         <ImageButton
-            android:id="@+id/btnCell6"
+            android:id="@+id/cell4"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="5"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell4" />
 
         <ImageButton
-            android:id="@+id/btnCell7"
+            android:id="@+id/cell5"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="6"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell5" />
 
         <ImageButton
-            android:id="@+id/btnCell8"
+            android:id="@+id/cell6"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="7"/>
-
+            android:scaleType="centerInside"
+            android:contentDescription="cell6" />
 
         <ImageButton
-            android:id="@+id/btnCell9"
+            android:id="@+id/cell7"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_background"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="Tic Tac Toe cell"
-            android:tag="8"/>
+            android:scaleType="centerInside"
+            android:contentDescription="cell7" />
 
+        <ImageButton
+            android:id="@+id/cell8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_background"
+            android:scaleType="centerInside"
+            android:contentDescription="cell8" />
 
     </GridLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
