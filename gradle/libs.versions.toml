@@ -18,6 +18,10 @@ preferenceKtx = "1.2.1"
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
 activity = "1.10.1"
+firebaseFirestoreKtx = "26.0.1"
+firebaseFirestore = "26.0.1"
+firebaseDatabaseKtx = "22.0.1"
+runtimeSavedInstanceState = "1.0.0-alpha11"
 
 [libraries]
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
@@ -40,6 +44,10 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+google-firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
+runtime-saved-instance-state = { group = "androidx.compose.runtime", name = "runtime-saved-instance-state", version.ref = "runtimeSavedInstanceState" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

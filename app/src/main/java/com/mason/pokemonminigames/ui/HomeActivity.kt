@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, SinglePlayerActivity::class.java))
         }
         binding.cardMultiplayer.setOnClickListener {
-            startActivity(Intent(this, MultiplayerActivity::class.java))
+            startActivity(Intent(this, LobbyActivity::class.java))
         }
 
         // Bottom nav
