@@ -54,14 +54,20 @@ dependencies {
 
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+    //implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
-
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation("com.google.firebase:firebase-bom:34.3.0")
+    implementation("com.google.firebase:firebase-firestore:26.0.1")
+    implementation("com.google.firebase:firebase-database:22.0.1")
 
     // Google Sign-In
     implementation(libs.play.services.auth)
+    implementation("com.google.firebase:firebase-auth:24.0.1")
 
     // Biometric
     implementation(libs.biometric)
