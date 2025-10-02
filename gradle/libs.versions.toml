@@ -1,11 +1,11 @@
 [versions]
 agp = "8.10.1"
 kotlin = "1.9.25"
-activityKtx = "1.10.1"
+activity = "1.8.2"
 appcompat = "1.7.1"
 biometric = "1.2.0-alpha05"
 constraintlayout = "2.2.1"
-coreKtx = "1.17.0"
+coreKtx = "1.12.0"
 firebaseBom = "33.3.0"
 fragmentKtx = "1.8.3"
 junit = "4.13.2"
@@ -15,39 +15,37 @@ lifecycleRuntimeKtx = "2.8.5"
 material = "1.12.0"
 playServicesAuth = "21.2.0"
 preferenceKtx = "1.2.1"
-navigationFragmentKtx = "2.9.3"
-navigationUiKtx = "2.9.3"
-activity = "1.10.1"
-firebaseFirestoreKtx = "26.0.1"
-firebaseFirestore = "26.0.1"
-firebaseDatabaseKtx = "22.0.1"
+navigation = "2.9.3"
 runtimeSavedInstanceState = "1.0.0-alpha11"
 
 [libraries]
-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+# AndroidX
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-
-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
 preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-google-firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
-firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
-runtime-saved-instance-state = { group = "androidx.compose.runtime", name = "runtime-saved-instance-state", version.ref = "runtimeSavedInstanceState" }
+navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+runtime-saved-instance-state = { module = "androidx.compose.runtime:runtime-saved-instance-state", version.ref = "runtimeSavedInstanceState" }
+
+# Firebase
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx" }
+
+# Google
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+
+# Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+ext-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "258196293152-82emthnnsh5gvv3on774gdgoov668fn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mason.pokemonminigames",
+            "certificate_hash": "ef963a30f5433f6902c9d8727413fcff3b51ae1e"
+          }
+        },
+        {
           "client_id": "258196293152-lvgsnfqlaaqqt3s33v2n9km3eaevubom.apps.googleusercontent.com",
           "client_type": 3
         }
