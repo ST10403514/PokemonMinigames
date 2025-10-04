@@ -12,6 +12,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.mason.pokemonminigames.R
 import com.mason.pokemonminigames.models.MultiplayerLobby
+import com.mason.pokemonminigames.models.UpdateScoreRequest
+import com.mason.pokemonminigames.models.UpdateScoreResponse
+import com.mason.pokemonminigames.network.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MultiplayerGameActivity : AppCompatActivity() {
 
@@ -46,7 +52,7 @@ class MultiplayerGameActivity : AppCompatActivity() {
         }
         currentPlayerId = currentUser.uid
 
-        // Initialize 3x3 board buttons safely
+        // Initialize 3x3 board buttons
         cells = Array(9) { i ->
             findViewById(resources.getIdentifier("cell$i", "id", packageName))
         }
@@ -88,7 +94,6 @@ class MultiplayerGameActivity : AppCompatActivity() {
             opponentSymbol = if (mySymbol == "X") "O" else "X"
             isMyTurn = lobby.currentPlayer == mySymbol
 
-            // Convert Firestore board map to 2D List for UI
             val board: List<List<String>> = (0..2).map { row ->
                 (0..2).map { col ->
                     lobby.board[row.toString()]?.get(col.toString()) ?: ""
@@ -108,11 +113,13 @@ class MultiplayerGameActivity : AppCompatActivity() {
                 }
                 "finished" -> {
                     enableBoard(false, board)
-                    val message = when (lobby.winner) {
-                        currentPlayerId -> "You Win! 🎉"
-                        null -> "It's a Draw!"
+                    val won = lobby.winner == currentPlayerId
+                    val message = when {
+                        won -> "You Win! 🎉"
+                        lobby.winner == null -> "It's a Draw!"
                         else -> "You Lose!"
                     }
+                    updateLeaderboardScore(won)  // ✅ Pass Boolean
                     tvStatus.text = "Game Over"
                     showGameOver(message)
                 }
@@ -120,6 +127,30 @@ class MultiplayerGameActivity : AppCompatActivity() {
         }
     }
 
+    private fun updateLeaderboardScore(won: Boolean) {
+        val currentUser = auth.currentUser ?: return
+        val username = currentUser.displayName ?: currentUser.email ?: "Player"
+
+        val request = UpdateScoreRequest(
+            userId = currentUser.uid,
+            username = username,
+            won = won
+        )
+
+        RetrofitClient.leaderboardApi.updateScore(request).enqueue(object : Callback<UpdateScoreResponse> {
+            override fun onResponse(call: Call<UpdateScoreResponse>, response: Response<UpdateScoreResponse>) {
+                if (response.isSuccessful && response.body()?.ok == true) {
+                    Log.d("MULTIPLAYER", "Leaderboard updated with streak")
+                } else {
+                    Log.e("MULTIPLAYER", "Failed to update leaderboard: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<UpdateScoreResponse>, t: Throwable) {
+                Log.e("MULTIPLAYER", "Network error updating leaderboard", t)
+            }
+        })
+    }
     private fun onCellClicked(index: Int) {
         if (!isMyTurn) return
 
@@ -131,7 +162,6 @@ class MultiplayerGameActivity : AppCompatActivity() {
             val snapshot = transaction.get(lobbyRef)
             val lobby = snapshot.toObject(MultiplayerLobby::class.java) ?: return@runTransaction
 
-            // Convert board map to mutable 2D list
             val currentBoard = (0..2).map { r ->
                 (0..2).map { c ->
                     lobby.board[r.toString()]?.get(c.toString()) ?: ""
@@ -142,16 +172,13 @@ class MultiplayerGameActivity : AppCompatActivity() {
 
             currentBoard[row][col] = mySymbol
 
-            // Convert 2D list back to Map<String, Map<String, String>>
             val newBoardMap = (0..2).associate { r ->
                 r.toString() to (0..2).associate { c ->
                     c.toString() to currentBoard[r][c]
                 }
             }
-
             lobby.board = newBoardMap
 
-            // Check win/draw
             if (checkWin(currentBoard, mySymbol)) {
                 lobby.status = "finished"
                 lobby.winner = currentPlayerId
