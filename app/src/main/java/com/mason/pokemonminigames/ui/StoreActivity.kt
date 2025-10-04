@@ -43,7 +43,9 @@ class StoreActivity : AppCompatActivity() {
                 Pokemon(1, "Pokemon 1", R.drawable.ic_pokemon1, 100),
                 Pokemon(2, "Pokemon 2", R.drawable.ic_pokemon2, 200),
                 Pokemon(3, "Pokemon 3", R.drawable.ic_pokemon3, 300),
-                Pokemon(4, "Pokemon 4", R.drawable.ic_pokemon4, 400)
+                Pokemon(4, "Pokemon 4", R.drawable.ic_pokemon4, 400),
+                Pokemon(5, "Pokemon 5", R.drawable.ic_pokemon5, 350),
+                Pokemon(6, "Pokemon 6", R.drawable.ic_pokemon6, 550)
             )
         )
     }
